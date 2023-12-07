@@ -1,0 +1,117 @@
+.footer {
+    background-color: #395144;
+    padding: 30px 80px;
+    font-family: "poppins";
+    text-align: center;
+    margin-top: 50%;
+}
+
+.footer .row {
+    width: 100%;
+    margin: 1% 0%;
+    padding: 0.6% 0%;
+    color: white;
+    font-size: 0.8em;
+    background-color: #395144;
+}
+
+.footer .row a {
+    text-decoration: none;
+    color: white;
+    background-color: #395144;
+    transition: 0.5s;
+}
+
+.footer .row img{
+    width: 280px;
+    height: auto;
+    float: left;
+    margin: 10px 0px;
+    background-color: #395144;
+}
+
+.footer .row a:hover {
+    color: #fff;
+    background-color: #395144;
+}
+
+/* .footer .row ul {
+    width: 100%;
+    background-color: #395144;
+} */
+
+/* .footer .row ul li { */
+    /* display: inline-block; */
+    /* margin: 90px 30px; */
+    /* background-color: #395144;
+} */
+
+.foot-list{
+    background-color: #395144;
+    text-align: left;
+    padding: 65px;
+}
+
+.foot-list a{
+    padding-top: 0rem;
+    margin: 0px;
+    font-size: x-large;
+}
+.footer .row a i {
+    font-size: 10rem;
+    margin: 0% 1%;
+    background-color: #395144;
+}
+
+.col p{
+    /* position: relative; */
+    background-color: #395144;
+    padding: 0px;
+}
+
+.col a{
+    background-color: #395144;
+    font-size: 20px;
+    padding: 20px;
+}
+
+@media only screen and (max-width: 1080px) {
+    .footer {
+        padding: 30px 20px; /* Sesuaikan padding dengan layar kecil */
+        margin-top: 10%;
+      }
+    
+      .footer .row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    
+      .footer .row img {
+        width: 180px; /* Sesuaikan ukuran gambar dengan layar kecil */
+        margin: 10px 0;
+        float: none;
+      }
+    
+      .foot-list {
+        padding: 20px;
+        text-align: center;
+      }
+    
+      .foot-list a {
+        font-size: large; /* Sesuaikan ukuran font dengan layar kecil */
+  
+      }
+    
+      .footer .row a i {
+        font-size: 5rem; /* Sesuaikan ukuran ikon dengan layar kecil */
+        margin: 0;
+      }
+    
+      .col p {
+        padding: 10px; /* Sesuaikan padding dengan layar kecil */
+      }
+      .col a{
+        padding: 0px;
+      }
+}

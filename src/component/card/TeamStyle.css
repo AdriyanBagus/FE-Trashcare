@@ -1,0 +1,55 @@
+.tim h1 {
+    padding-bottom: 0px;
+    font-family: "poppins";
+    text-align: center;
+}
+
+div.gallery {
+    margin: 90px;
+    float: left;
+    width: 180px;
+    padding-top: 0%;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+    float: center;
+}
+
+div.desc {
+    padding: 20px;
+    text-align: center;
+}
+ 
+.gallery h3 {
+    text-align: center;
+    margin: 20px;
+    font-family: "poppins";
+}
+
+.gallery p {
+    text-align: center;
+    font-family: "poppins";
+    padding: 5px;
+    
+}
+
+.responsive {
+    padding-top: 20px;
+    float: left;
+    width: 25%;
+}
+
+@media only screen and (max-width: 1080px) {
+    .responsive {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width: 100%;
+    } 
+    .gallery {
+        flex: 1;
+        max-width: 200px;
+    }
+}

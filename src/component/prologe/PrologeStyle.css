@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+
+.home {
+    padding: 40px;
+}
+
+h1 {
+    font-size: 60px;
+    font-weight: 500;
+    color: #395144;
+    font-family: "poppins";
+}
+h2{
+    font-family: "poppins";
+    color: #395144;
+}
+p {
+    padding-top: 0.5rem;
+    font-family: "poppins", sans-serif;
+    font-size: 1.2rem;
+    text-align: justify;
+}
+
+.kartun {
+    float: right;
+    padding-bottom: 100px;
+    border-radius: 0px 10px 10px 0px;
+    width: 450px;
+    height: 100%;
+}
+
+.button_deteksi {
+    padding: 1px;
+    background-color: #aa8b56;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.button_deteksi:hover {
+    background-color: #59421c;
+}
+
+@media only screen and (max-width: 1080px) {
+    .kartun{
+        display: none;
+    }
+    
+}

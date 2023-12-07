@@ -1,0 +1,39 @@
+.row {
+    padding: 10px;
+}
+
+.column {
+    float: left;
+    width: 40%;
+    padding: 60px;
+}
+.img-column{
+    float: left;
+    width: 40%;
+    padding: 60px;
+}
+
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.jdl {
+    text-align: right;
+    padding-top: 9rem;
+
+}
+@media only screen and (max-width: 1080px) {
+    .img-column{
+        display: none;
+    }
+    .jdl{
+       text-align: center;
+       padding-bottom: 0px;
+    }
+    .column{
+        width: 400px;
+        padding: 35px;
+    }
+}

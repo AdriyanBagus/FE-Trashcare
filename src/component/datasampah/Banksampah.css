@@ -1,0 +1,75 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  thead {
+    color: white;
+  }
+  
+  thead th {
+    padding: 10px;
+    text-align: center;
+    background-color: #395144;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  tbody tr:hover {
+    background-color: #ccc;
+  }
+  
+  td {
+    padding: 10px;
+    background-color: #aa8b56;
+    text-align: center;
+    color: white;
+  }
+  
+  /* Style untuk MainComponent atau halaman utama */
+  
+.jdl-table {
+    text-align: center;
+    color: #395144;
+    margin-bottom: 20px;
+  }
+  
+  /* Gaya tambahan jika diperlukan */
+  
+  /* Misalnya, membuat tabel responsif */
+  @media only screen and (max-width: 1080px) {
+    table {
+        overflow-x: auto;
+      }
+      
+      th, td {
+        white-space: nowrap;
+      }
+    
+      th {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        background-color: #395144;
+        color: #fff;
+        display: grid;
+      }
+    
+      tbody tr {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #ccc;
+        padding: 10px;
+      }
+    
+      td {
+        width: 100%;
+        box-sizing: border-box;
+      }
+  }

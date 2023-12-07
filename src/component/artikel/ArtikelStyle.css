@@ -1,0 +1,70 @@
+.article-container {
+    display: grid;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    grid-template-columns: repeat(4, 1fr); /* 1fr = 1 fraction, membuat 4 kolom yang memiliki lebar yang sama */
+    gap: 20px; /* Jarak antar card */
+    padding: 40px;
+  }
+  
+  .article-card-simple {
+    flex: 1;/*Menggunakan ruang yang sama untuk setiap artikel*/
+    max-width: 200px;/*Menentukan lebar maksimum untuk setiap kartu*/
+    border: 1px solid #395144;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #395144;
+    max-width: 1000px;
+}
+  
+  .article-image-simple {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #395144;
+  }
+  
+  .article-content-simple {
+    padding: 10px;
+    text-align: center;
+    background-color: #395144;
+  }
+  
+  .article-title-simple {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    max-width: 900px;
+    color: white;
+    /* overflow: hidden; */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background-color: #395144;
+  }
+  
+  .article-description-simple {
+    margin-bottom: 15px;
+    color: white;
+    font-weight: bold;
+    background-color: #395144;
+    /* text-align: center; */
+  }
+  
+  .article-link-simple {
+    color: #aa8b56;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    background-color: #395144;
+  }
+
+@media only screen and (max-width: 1080px) {
+  .article-container {
+    display: grid;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    grid-template-columns: repeat(2, 1fr); /* 1fr = 1 fraction, membuat 4 kolom yang memiliki lebar yang sama */
+    gap: 0px; /* Jarak antar card */
+    padding: 10px;
+  }
+}
