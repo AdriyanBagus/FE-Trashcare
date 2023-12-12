@@ -12,6 +12,9 @@ const Deteksi = () => {
         <Navbar />
           <h1 className='jdl-cam'>Deteksi Sampah</h1>
           <p className='text-vision'>Masukan gambar dibawah sini</p>
+          <br/>
+          <br/>
+          <br/>
           {/* <Webcam className='camera-video' /> */}
           <Vision />
         {/* <Footer /> */}
