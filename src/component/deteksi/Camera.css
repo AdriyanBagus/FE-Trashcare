@@ -4,36 +4,32 @@
 .text-vision {
   text-align: center;
 }
-
 .center {
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
   align-items: center;
 }
-
 .input-img {
   width: 200px; /* Set the width according to your design */
   color: black;
 }
-
 .preview-img {
   flex: 1;
   margin-right: 20px; /* Adjust margin according to your design */
 }
-
 .btn-deteksi {
   margin-top: 10px; /* Adjust margin according to your design */
   margin-right: 10px;
 }
-
+.btn-deteksi:hover{
+  background-color: #59421c;
+}
 .prediction {
   flex: 1;
 }
-
 .result {
   margin-top: 10px; /* Adjust margin according to your design */
 }
-
 /* Additional styling for better appearance */
 .center {
   max-width: 800px;
@@ -48,10 +44,47 @@
   border-radius: 5px; /* Optional: Add border-radius for a rounded image */
 }
 
-/* @media only screen and (min-width: 1080px) {
+.custom-file-input{
+  background-color: #517562;
+  padding: 9px 25px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+.custom-file-input:hover{
+  background-color: #1b422d;
+}
+.file-label-text {
+  font-family: "poppins";
+  font-weight: 600;
+  font-size: 18px;
+  color: white; 
+  background-color: #517562;
+  cursor: pointer; 
+  margin-top: 50px;
+
+  /* Add styles for hover effect if needed */
+  transition: all 0.3s ease 0s;
+
+}
+.custom-file-input:hover .file-label-text {
+  background-color: #1b422d; /* Change text color on hover */
+}
+@media only screen and (max-width: 768px) {
     .center {
       flex-direction: row;
       justify-content: space-between;
       align-items: flex-start;
     }
-  } */
+    .file-label-text{
+      padding: 0px;
+    }
+    .preview-img{
+      margin-bottom: 20px;
+    }
+    .btn-deteksi {
+      margin-top: 14px;
+    }
+  }

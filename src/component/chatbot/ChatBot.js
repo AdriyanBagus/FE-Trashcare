@@ -12,8 +12,8 @@ const ChatBot = () => {
 
   const handleSendMessage = async () => {
     if (inputText.trim() === "") return;
-
-    // Menanggapi pesan dari pengguna
+ 
+    // Responding to the user's message
     const userMessage = {
       text: inputText,
       sender: "user",
@@ -21,12 +21,12 @@ const ChatBot = () => {
     setMessages((prevMessages) => [...prevMessages, userMessage]);
 
     try {
-      // Mengirim pesan pengguna ke backend Flask
+      // Sending the user's message to the backend
       const response = await axios.post("http://localhost:5000/api/chatbot", {
         message: inputText,
       });
 
-      // Menambahkan balasan dari chatbot
+      // Adding the chatbot's reply
       const botMessage = {
         text: response.data.message,
         sender: "bot",
@@ -36,7 +36,7 @@ const ChatBot = () => {
       console.error("Error sending message to chatbot:", error);
     }
 
-    // Membersihkan input
+    // Clearing the input
     setInputText("");
   };
 
@@ -47,11 +47,14 @@ const ChatBot = () => {
           {messages.map((message, index) => (
             <div
               key={index}
-              className={`message ${
-                message.sender === "user" ? "user" : "bot"
-              }`}
+              className={`message ${message.sender === "user" ? "user" : "bot"}`}
             >
-              {message.text}
+              <div
+                className={`icon ${
+                  message.sender === "user" ? "user-icon" : "bot-icon"
+                }`}
+              />
+              <div className="message-text">{message.text}</div>
             </div>
           ))}
         </div>

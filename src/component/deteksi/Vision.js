@@ -9,7 +9,6 @@ const Vision = () => {
   const [predictionResult, setPredictionResult] = useState(null);
   const [loading, setLoading] = useState(false);
 
-
   const handleInputChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -61,12 +60,6 @@ const Vision = () => {
 
   return (
     <div className="center">
-      <input
-        className="input-img"
-        type="file"
-        accept="image/*"
-        onChange={handleInputChange}
-      />
       {imageURL && (
         <div className="preview-img">
           <img
@@ -76,6 +69,17 @@ const Vision = () => {
           />
         </div>
       )}
+      <label className="custom-file-input">
+        <input
+          type="file"
+          accept="image/*"
+          onChange={handleInputChange}
+          style={{ display: "none" }}
+        />
+        <span className="file-label-text">Masukkan Gambar</span>
+      </label>
+
+
       <button className="btn-deteksi" onClick={handleSubmit}>
         Deteksi Gambar
       </button>
@@ -84,8 +88,8 @@ const Vision = () => {
         <h2>Hasil Deteksi:</h2>
         {predictionResult && (
           <div className="result">
-            <p>Nama: {predictionResult.nama}</p>
-            <p>Akurasi: {predictionResult.akurasi}</p>
+            <p>Nama : {predictionResult.nama}</p>
+            <p>Akurasi : {predictionResult.akurasi}</p>
           </div>
         )}
       </div>
