@@ -38,8 +38,8 @@
   background-color: #517562;
 }
 .message.user .icon {
-  margin-left: 0; /* Adjust the margin for the user icon */
-  margin-right: 8px; /* Adjust the margin for the user icon */
+  margin-left: 0; 
+  margin-right: 8px; 
 }
 .message-text {
   flex: 1;
@@ -61,15 +61,15 @@
   border-radius: 0px;
 }
 .icon {
-  width: 30px;/*Adjustthewidthoftheicons*/
-  height: 30px;/*Adjusttheheightoftheicons*/
-  margin-right: 8px;/*Adjustthemarginaccordingtoyourdesign*/
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
   border-radius: 50%;
   display: inline-block;
   vertical-align: middle;
 }
 .user-icon {
-  background-image: url("../../img/user.png"); /*Replacewiththepathtoyourusericon*/
+  background-image: url("../../img/user.png"); 
   background-size: cover;
   background-color: #395144;
   border-radius: 80%;
@@ -77,14 +77,19 @@
 
 .bot-icon {
   background-image: url("../../img/logo.png");
-  /*Replacewiththepathtoyourboticon*/
   background-size: cover;
-  border-radius: 80%; /*Assumingtheiconsarecircular,adjustasneeded*/
+  border-radius: 80%; 
 }
 
 @media only screen and (max-width: 768px) {
-  /* Gaya untuk layar berukuran kecil */
   .chatbot-container {
+    width: 95%;
+  }
+  .chatbot-input {
     width: 90%;
+  }
+  .btn-bot{
+    padding: 10px;
+    padding-right: 13px;
   }
 }

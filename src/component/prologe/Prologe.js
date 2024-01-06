@@ -6,7 +6,6 @@ const Prologe = () => {
     return (
       <div className='home'>
         <h1>TrashCare</h1>
-        
           <p>Klasifikasi dan deteksi jenis sampah<br></br>
             serta pengolahan limbah sampah rumah tangga berdasarkan prediksi sampah</p>
           <p>Yuk gunakan <b>TrashCare</b><br></br>
@@ -17,6 +16,5 @@ const Prologe = () => {
       </div>
     )
 }
-
 
 export default Prologe

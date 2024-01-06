@@ -2,7 +2,6 @@ import React from 'react'
 // import Webcam from 'react-webcam'
 import '../component/deteksi/Camera.css'
 import Navbar from '../component/navbar/Navbar'
-import Footer from '../component/footer/Footer'
 import Vision from '../component/deteksi/Vision'
 
 
@@ -17,7 +16,6 @@ const Deteksi = () => {
           <br/>
           {/* <Webcam className='camera-video' /> */}
           <Vision />
-        {/* <Footer /> */}
       </div>
     )
   }

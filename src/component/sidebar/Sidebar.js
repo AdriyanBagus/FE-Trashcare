@@ -11,10 +11,10 @@ const Sidebar = () => {
   return (
     <div className='header-admin'>
       <ul className={`admin-link ${showNav ? 'show' : ''}`}>
-        <li><a href=''>Dashboard</a></li>
-        <li><a href=''>Tambah Data</a></li>
-        <li><a href=''>Edit Data</a></li>
-        <li><a href=''>Lihat Data</a></li>
+        <li><a href='/admin'>Dashboard</a></li>
+        <li><a href='/tambahdata'>Tambah Data</a></li>
+        <li><a href='/editdata'>Edit Data</a></li>
+        <li><a href='/viewdata'>Lihat Data</a></li>
         <li><a href='/'>Home Page</a></li>
       </ul>
       <div className='hamburger' onClick={toggleNav}>

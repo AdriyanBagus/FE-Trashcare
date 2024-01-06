@@ -15,6 +15,7 @@ const Navbar = () => {
       <ul className={`nav__links ${showNav ? 'show' : ''}`}>
         <li><a href='/'>Home</a></li>
         <li><a href='/artikel'>Artikel</a></li>
+        {/* <li><a href='/berita'>Berita</a></li> */}
         <li><a href='/banksampah'>Bank Sampah</a></li>
         <li><a href='/chatbot'>ChatBot</a></li>
         <li><a href="/login" className='hide-login'>Login</a></li>
