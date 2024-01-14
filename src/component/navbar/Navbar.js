@@ -13,14 +13,13 @@ const Navbar = () => {
     <div className='header'>
       <img src={logo} className='logo' alt="logo" />
       <ul className={`nav__links ${showNav ? 'show' : ''}`}>
-        <li><a href='/'>Home</a></li>
-        <li><a href='/artikel'>Artikel</a></li>
-        {/* <li><a href='/berita'>Berita</a></li> */}
-        <li><a href='/banksampah'>Bank Sampah</a></li>
-        <li><a href='/chatbot'>ChatBot</a></li>
-        <li><a href="/login" className='hide-login'>Login</a></li>
+        <li><a href='https://38e7-36-68-53-27.ngrok-free.app/'>Home</a></li>
+        <li><a href='https://38e7-36-68-53-27.ngrok-free.app/artikel'>Artikel</a></li>
+        <li><a href='https://38e7-36-68-53-27.ngrok-free.app/chatbot'>ChatBot</a></li>
+        <li><a href='https://9321-36-68-53-27.ngrok-free.app'>Sentimen</a></li>
+        <li><a href="https://38e7-36-68-53-27.ngrok-free.app/login" className='hide-login'>Login</a></li>
       </ul>
-      <a href="/login" className="cta">
+      <a href="https://38e7-36-68-53-27.ngrok-free.app/login" className="cta">
         <button>Login</button>
       </a>
       <div className='hamburger' onClick={toggleNav}>

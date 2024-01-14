@@ -81,15 +81,41 @@
   border-radius: 80%; 
 }
 
-@media only screen and (max-width: 768px) {
+/* Tampilan responsif */
+@media only screen and (max-width: 1080px) {
   .chatbot-container {
-    width: 95%;
+    padding: 10px; /* Menyesuaikan padding agar konten tetap terlihat seimbang */
   }
+
+  .chatbot-messages {
+    height: auto; /* Mengubah tinggi menjadi auto agar menyesuaikan konten */
+    max-height: none; /* Menghilangkan batas tinggi maksimum */
+  }
+
+  .message {
+    padding: 10px; /* Mengurangi padding pada pesan */
+    margin-bottom: 5px; /* Mengembalikan margin pada pesan */
+    font-size: 16px; /* Menyesuaikan ukuran font pesan pada layar kecil */
+  }
+
+  .message-text {
+    font-size: 16px; /* Menyesuaikan ukuran font pesan pada layar kecil */
+  }
+
   .chatbot-input {
-    width: 90%;
+    flex-direction: column; /* Mengubah flex-direction menjadi column agar input dan tombol berada di bawah pesan */
+    align-items: stretch; /* Memastikan agar input dan tombol memiliki lebar yang sama */
+    margin-top: 10px;
   }
-  .btn-bot{
-    padding: 10px;
-    padding-right: 13px;
+
+  .chatbot-input input {
+    padding: 10px; /* Menyesuaikan padding pada input untuk kenyamanan */
+    margin-bottom: 10px; /* Menambahkan margin bottom agar terlihat lebih rapi */
+  }
+
+  .btn-bot {
+    padding: 15px 20px; /* Menyesuaikan padding pada tombol */
+    border-radius: 5px; /* Menyesuaikan border-radius pada tombol */
   }
 }
+

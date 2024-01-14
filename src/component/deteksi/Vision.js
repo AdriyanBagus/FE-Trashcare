@@ -5,9 +5,10 @@ import "./Camera.css";
 const Vision = () => {
   const [inputValue, setInputValue] = useState("");
   const [imageURL, setImageURL] = useState("");
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("");
   const [predictionResult, setPredictionResult] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [history, setHistory] = useState([]);
 
   const handleInputChange = (e) => {
     const file = e.target.files[0];
@@ -19,13 +20,13 @@ const Vision = () => {
   const getBase64 = (file) => {
     let reader = new FileReader();
     reader.readAsDataURL(file);
-    reader.onload = function() {
+    reader.onload = function () {
       const base64String = reader.result.split(",")[1];
       setInputValue(base64String);
       setImageURL(reader.result);
       console.log("Gambar dalam format base64:", base64String);
     };
-    reader.onerror = function(error) {
+    reader.onerror = function (error) {
       console.log("Error: ", error);
     };
   };
@@ -43,11 +44,13 @@ const Vision = () => {
         }
       );
 
-      // console.log("Response data:", response.data.nama);
-      // console.log("Response data:", response.data.akurasi);
-
       // Simpan hasil prediksi
       setPredictionResult(response.data);
+
+      // Tambahkan hasil ke dalam histori
+      setHistory((prevHistory) => [...prevHistory, response.data]);
+
+
     } catch (error) {
       console.log("Gagal terkirim:", error);
       if (error.response && error.response.data) {
@@ -55,6 +58,8 @@ const Vision = () => {
         setMessage(`Gagal terkirim: ${errorMessage}`);
         console.log("Pesan Kesalahan:", errorMessage);
       }
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -79,8 +84,7 @@ const Vision = () => {
         <span className="file-label-text">Masukkan Gambar</span>
       </label>
 
-
-      <button className="btn-deteksi" onClick={handleSubmit}>
+      <button className="btn-deteksi" onClick={handleSubmit} disabled={loading}>
         Deteksi Gambar
       </button>
 
@@ -92,6 +96,16 @@ const Vision = () => {
             <p>Akurasi : {predictionResult.akurasi}</p>
           </div>
         )}
+      </div>
+
+      <div className="history">
+        <h2>Histori Deteksi:</h2>
+        {history.map((item, index) => (
+          <div key={index} className="history-item">
+            <p>Nama : {item.nama}</p>
+            <p>Akurasi : {item.akurasi}</p>
+          </div>
+        ))}
       </div>
     </div>
   );

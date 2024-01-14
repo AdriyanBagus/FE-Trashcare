@@ -1,25 +1,41 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../component/Login.css';
 
-export const Login = () => {
+const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [loggedIn, setLoggedIn] = useState(false);
+  const navigate = useNavigate(); // Menggunakan useNavigate untuk navigasi
 
-  const handleLogin = () => {
-    // Pemeriksaan input kosong
+  const handleLogin = async () => {
     if (username.trim() === '' || password.trim() === '') {
       alert('Username and password are required.');
       return;
     }
 
-    // Simulasi validasi login (ganti dengan validasi server yang sebenarnya)
-    if (username === 'Adriyan' && password === '1234') {
-      setLoggedIn(true);
-    } else {
-      alert('Login failed. Please check your username and password.');
+    try {
+      const response = await fetch('http://localhost:7000/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        alert('Login successful');
+        navigate('/admin'); // Gunakan navigate('/admin') untuk redireksi
+      } else {
+        alert(`Login failed. ${data.message}`);
+      }
+    } catch (error) {
+      console.error('Login error:', error);
+      alert('An error occurred during login. Please try again.');
     }
   };
+  
 
   return (
     <div className="form-main">
@@ -53,7 +69,7 @@ export const Login = () => {
         </div>
         <div className="clear"></div>
         <div className="form-bottom">
-          <a href='/admin'>
+          <a href='/'>
             <button className="btn-sign" onClick={handleLogin}>
               Login
             </button>

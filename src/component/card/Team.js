@@ -12,25 +12,25 @@ const Team = () => {
       <div class="tim" id="#tim">
         <h1>Tim Kami</h1>
         <TeamComponent
-          jabatan = "Ketua"
+          // jabatan = "Ketua"
           foto = {Profile1}
           nama = "Adi Sucipto"
           nim = '21090040'      
         />
         <TeamComponent
-          jabatan = "Anggota"
+          // jabatan = "Anggota"
           foto = {Profile2}
           nama = "Adriyan Bagus Krisnayandhi"
           nim = '21090007'      
         />
         <TeamComponent
-          jabatan = "Anggota"
+          // jabatan = "Anggota"
           foto = {Profile3}
           nama = "Sakinah Umi Pramita"
           nim = '21090087'      
         />
         <TeamComponent
-          jabatan = "Anggota"
+          // jabatan = "Anggota"
           foto = {Profile4}
           nama = "Nabilla Auly Zahra"
           nim = '21090094'      

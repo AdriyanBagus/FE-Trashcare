@@ -8,7 +8,7 @@ li,
 a {
   font-family: "poppins";
   font-weight: 600;
-  font-size: 18px;
+  font-size: 20px;
   color: white;
   text-decoration: none;
 }
@@ -16,7 +16,7 @@ a {
 button {
   font-family: "poppins";
   font-weight: 600;
-  font-size: 18px;
+  font-size: 19px;
   color: #edf0f1;
   text-decoration: none;
 }
@@ -76,6 +76,7 @@ button:hover {
   background-color: #395144;
   padding-right: 20px;
 }
+
 .hide-login {
   display: none;
 }
