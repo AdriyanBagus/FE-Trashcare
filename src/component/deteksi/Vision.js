@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Camera.css";
 
@@ -9,6 +9,17 @@ const Vision = () => {
   const [predictionResult, setPredictionResult] = useState(null);
   const [loading, setLoading] = useState(false);
   const [history, setHistory] = useState([]);
+
+  // Mengambil histori dari local storage saat komponen dimount
+  useEffect(() => {
+    const storedHistory = JSON.parse(localStorage.getItem("predictionHistory")) || [];
+    setHistory(storedHistory);
+  }, []);
+
+  // Menyimpan histori ke local storage setiap kali histori diupdate
+  useEffect(() => {
+    localStorage.setItem("predictionHistory", JSON.stringify(history));
+  }, [history]);
 
   const handleInputChange = (e) => {
     const file = e.target.files[0];
@@ -49,8 +60,6 @@ const Vision = () => {
 
       // Tambahkan hasil ke dalam histori
       setHistory((prevHistory) => [...prevHistory, response.data]);
-
-
     } catch (error) {
       console.log("Gagal terkirim:", error);
       if (error.response && error.response.data) {
@@ -61,6 +70,15 @@ const Vision = () => {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleDeleteHistory = (index) => {
+    // Buat salinan histori tanpa entri yang akan dihapus
+    const updatedHistory = [...history];
+    updatedHistory.splice(index, 1);
+
+    // Perbarui state histori
+    setHistory(updatedHistory);
   };
 
   return (
@@ -93,7 +111,7 @@ const Vision = () => {
         {predictionResult && (
           <div className="result">
             <p>Nama : {predictionResult.nama}</p>
-            <p>Akurasi : {predictionResult.akurasi}</p>
+            <p>Probability : {predictionResult.akurasi}</p>
           </div>
         )}
       </div>
@@ -103,7 +121,8 @@ const Vision = () => {
         {history.map((item, index) => (
           <div key={index} className="history-item">
             <p>Nama : {item.nama}</p>
-            <p>Akurasi : {item.akurasi}</p>
+            <p>Probability : {item.akurasi}</p>
+            <button onClick={() => handleDeleteHistory(index)}>Hapus</button>
           </div>
         ))}
       </div>

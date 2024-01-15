@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../component/Login.css';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -12,23 +13,29 @@ const Login = () => {
       alert('Username and password are required.');
       return;
     }
-
+  
     try {
-      const response = await fetch('http://localhost:7000/api/login', {
+      const response = await fetch('http://localhost:5000/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ username, password }),
       });
-
+  
       const data = await response.json();
-
+  
       if (data.success) {
         alert('Login successful');
-        navigate('/admin'); // Gunakan navigate('/admin') untuk redireksi
+        window.location.href = 'http://localhost:5000/admin'; // Menggunakan assignment, bukan pemanggilan fungsi
       } else {
         alert(`Login failed. ${data.message}`);
+        // Example: Handle specific error messages
+        if (data.message === 'Invalid username or password') {
+          // Handle specific case
+        } else if (data.message === 'User not found') {
+          // Handle specific case
+        }
       }
     } catch (error) {
       console.error('Login error:', error);
@@ -36,7 +43,6 @@ const Login = () => {
     }
   };
   
-
   return (
     <div className="form-main">
       <div className="form-left">
@@ -69,7 +75,7 @@ const Login = () => {
         </div>
         <div className="clear"></div>
         <div className="form-bottom">
-          <a href='/'>
+          <a>
             <button className="btn-sign" onClick={handleLogin}>
               Login
             </button>

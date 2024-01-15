@@ -1,62 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../component/navbar/Navbar";
 import Footer from "../component/footer/Footer";
-import logo from "../img/Artikel 2.png";
-import "../component/artikel/ArtikelStyle.css";
 import ArtikelComponent from "../component/artikel/ArtikelComponent";
 
-
 const Artikel = () => {
-  const articles = [
-    {
-      // title: "Artikel 1",
-      content: '"Lakukan Inovasi dan Terobosan, Bank Sampah Marga Jaya Rindang Kota Tegal Dapat Apresiasi dari Puskesmas"',
-      link: "https://www.example.com/react-tutorial",
-      imageSrc: logo,
-    },
-    {
-      // title: "Judul Artikel",
-      content: '"Lakukan Inovasi dan Terobosan, Bank Sampah Marga Jaya Rindang Kota Tegal Dapat Apresiasi dari Puskesmas"',
-      link: "https://www.example.com/javascript-best-practices",
-      imageSrc: logo,
-    },
-    {
-      // title: "Judul Artikel",
-      content: '"Lakukan Inovasi dan Terobosan, Bank Sampah Marga Jaya Rindang Kota Tegal Dapat Apresiasi dari Puskesmas"',
-      link: "https://www.example.com/react-tutorial",
-      imageSrc: logo,
-    },
-    {
-      // title: "Judul Artikel",
-      content: '"Lakukan Inovasi dan Terobosan, Bank Sampah Marga Jaya Rindang Kota Tegal Dapat Apresiasi dari Puskesmas"',
-      link: "https://www.example.com/javascript-best-practices",
-      imageSrc: logo,
-    },
-     {
-      // title: "Artikel 1",
-      content: '"Lakukan Inovasi dan Terobosan, Bank Sampah Marga Jaya Rindang Kota Tegal Dapat Apresiasi dari Puskesmas"',
-      link: "https://www.example.com/react-tutorial",
-      imageSrc: logo,
-    },
-    {
-      // title: "Judul Artikel",
-      content: '"Lakukan Inovasi dan Terobosan, Bank Sampah Marga Jaya Rindang Kota Tegal Dapat Apresiasi dari Puskesmas"',
-      link: "https://www.example.com/javascript-best-practices",
-      imageSrc: logo,
-    },
-    {
-      // title: "Judul Artikel",
-      content: '"Lakukan Inovasi dan Terobosan, Bank Sampah Marga Jaya Rindang Kota Tegal Dapat Apresiasi dari Puskesmas"',
-      link: "https://www.example.com/react-tutorial",
-      imageSrc: logo,
-    },
-    {
-      // title: "Judul Artikel",
-      content: '"Lakukan Inovasi dan Terobosan, Bank Sampah Marga Jaya Rindang Kota Tegal Dapat Apresiasi dari Puskesmas"',
-      link: "https://www.example.com/javascript-best-practices",
-      imageSrc: logo,
-    }
-  ];
+  const [articles, setArticles] = useState([]);
+
+  useEffect(() => {
+    const fetchArticles = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/get_articles");
+        if (!response.ok) {
+          throw new Error("Failed to fetch articles");
+        }
+        const data = await response.json();
+        setArticles(data.articles);
+      } catch (error) {
+        console.error("Error fetching articles:", error);
+      }
+    };
+
+    fetchArticles();
+  }, []); // Empty dependency array ensures the effect runs only once on component mount
 
   return (
     <div>
