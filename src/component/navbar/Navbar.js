@@ -13,13 +13,13 @@ const Navbar = () => {
     <div className='header'>
       <img src={logo} className='logo' alt="logo" />
       <ul className={`nav__links ${showNav ? 'show' : ''}`}>
-        <li><a href='http://localhost:3000/'>Home</a></li>
-        <li><a href='http://localhost:3000/artikel'>Artikel</a></li>
-        <li><a href='http://localhost:3000/chatbot'>ChatBot</a></li>
+        <li><a href='/'>Home</a></li>
+        <li><a href='/artikel'>Artikel</a></li>
+        <li><a href='/chatbot'>ChatBot</a></li>
         <li><a href='http://localhost:5000/'>Sentimen</a></li>
-        <li><a href="http://localhost:3000/login" className='hide-login'>Login</a></li>
+        <li><a href="/login" className='hide-login'>Login</a></li>
       </ul>
-      <a href="http://localhost:3000/login" className="cta">
+      <a href="/login" className="cta">
         <button>Login</button>
       </a>
       <div className='hamburger' onClick={toggleNav}>

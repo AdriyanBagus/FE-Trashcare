@@ -32,13 +32,13 @@
   }
   
   .article-title-simple {
-    font-size: 1.5em;
+    font-size: 1em;
     margin-bottom: 10px;
     max-width: 900px;
     color: white;
     /* overflow: hidden; */
     text-overflow: ellipsis;
-    white-space: nowrap;
+    /* white-space: nowrap; */
     background-color: #395144;
   }
   
